@@ -45,17 +45,17 @@ OBJECTDIR=build/${CND_CONF}/${IMAGE_TYPE}
 DISTDIR=dist/${CND_CONF}/${IMAGE_TYPE}
 
 # Source Files Quoted if spaced
-SOURCEFILES_QUOTED_IF_SPACED=src/framework/sal/udp/arp.c src/framework/sal/udp/dhcp.c src/framework/sal/udp/icmp.c src/framework/sal/udp/ipv4.c src/framework/sal/udp/udp.c src/framework/sal/dio/inch.c src/framework/sal/dio/outch.c src/framework/sal/rtos/rtos.c src/framework/sal/rtos/rtos_cfg.c src/framework/sal/sys/exc.c src/framework/sal/sys/main.c src/app_udp.c src/framework/hal/adc.c src/framework/hal/can.c src/framework/hal/eep.c src/framework/hal/ethmac.c src/framework/hal/ethphy.c src/framework/hal/ic.c src/framework/hal/int.c src/framework/hal/port.c src/framework/hal/pwm.c src/framework/hal/tmr.c src/framework/hal/uart.c
+SOURCEFILES_QUOTED_IF_SPACED=src/framework/hal/adc.c src/framework/hal/can.c src/framework/hal/eep.c src/framework/hal/ethmac.c src/framework/hal/ethphy.c src/framework/hal/ic.c src/framework/hal/int.c src/framework/hal/port.c src/framework/hal/pwm.c src/framework/hal/tmr.c src/framework/hal/uart.c src/framework/sal/dio/inch.c src/framework/sal/dio/outch.c src/framework/sal/rtos/rtos.c src/framework/sal/rtos/rtos_cfg.c src/framework/sal/sys/exc.c src/framework/sal/sys/main.c src/framework/sal/udp/arp.c src/framework/sal/udp/dhcp.c src/framework/sal/udp/icmp.c src/framework/sal/udp/ipv4.c src/framework/sal/udp/udp.c src/app_udp.c
 
 # Object Files Quoted if spaced
-OBJECTFILES_QUOTED_IF_SPACED=${OBJECTDIR}/src/framework/sal/udp/arp.o ${OBJECTDIR}/src/framework/sal/udp/dhcp.o ${OBJECTDIR}/src/framework/sal/udp/icmp.o ${OBJECTDIR}/src/framework/sal/udp/ipv4.o ${OBJECTDIR}/src/framework/sal/udp/udp.o ${OBJECTDIR}/src/framework/sal/dio/inch.o ${OBJECTDIR}/src/framework/sal/dio/outch.o ${OBJECTDIR}/src/framework/sal/rtos/rtos.o ${OBJECTDIR}/src/framework/sal/rtos/rtos_cfg.o ${OBJECTDIR}/src/framework/sal/sys/exc.o ${OBJECTDIR}/src/framework/sal/sys/main.o ${OBJECTDIR}/src/app_udp.o ${OBJECTDIR}/src/framework/hal/adc.o ${OBJECTDIR}/src/framework/hal/can.o ${OBJECTDIR}/src/framework/hal/eep.o ${OBJECTDIR}/src/framework/hal/ethmac.o ${OBJECTDIR}/src/framework/hal/ethphy.o ${OBJECTDIR}/src/framework/hal/ic.o ${OBJECTDIR}/src/framework/hal/int.o ${OBJECTDIR}/src/framework/hal/port.o ${OBJECTDIR}/src/framework/hal/pwm.o ${OBJECTDIR}/src/framework/hal/tmr.o ${OBJECTDIR}/src/framework/hal/uart.o
-POSSIBLE_DEPFILES=${OBJECTDIR}/src/framework/sal/udp/arp.o.d ${OBJECTDIR}/src/framework/sal/udp/dhcp.o.d ${OBJECTDIR}/src/framework/sal/udp/icmp.o.d ${OBJECTDIR}/src/framework/sal/udp/ipv4.o.d ${OBJECTDIR}/src/framework/sal/udp/udp.o.d ${OBJECTDIR}/src/framework/sal/dio/inch.o.d ${OBJECTDIR}/src/framework/sal/dio/outch.o.d ${OBJECTDIR}/src/framework/sal/rtos/rtos.o.d ${OBJECTDIR}/src/framework/sal/rtos/rtos_cfg.o.d ${OBJECTDIR}/src/framework/sal/sys/exc.o.d ${OBJECTDIR}/src/framework/sal/sys/main.o.d ${OBJECTDIR}/src/app_udp.o.d ${OBJECTDIR}/src/framework/hal/adc.o.d ${OBJECTDIR}/src/framework/hal/can.o.d ${OBJECTDIR}/src/framework/hal/eep.o.d ${OBJECTDIR}/src/framework/hal/ethmac.o.d ${OBJECTDIR}/src/framework/hal/ethphy.o.d ${OBJECTDIR}/src/framework/hal/ic.o.d ${OBJECTDIR}/src/framework/hal/int.o.d ${OBJECTDIR}/src/framework/hal/port.o.d ${OBJECTDIR}/src/framework/hal/pwm.o.d ${OBJECTDIR}/src/framework/hal/tmr.o.d ${OBJECTDIR}/src/framework/hal/uart.o.d
+OBJECTFILES_QUOTED_IF_SPACED=${OBJECTDIR}/src/framework/hal/adc.o ${OBJECTDIR}/src/framework/hal/can.o ${OBJECTDIR}/src/framework/hal/eep.o ${OBJECTDIR}/src/framework/hal/ethmac.o ${OBJECTDIR}/src/framework/hal/ethphy.o ${OBJECTDIR}/src/framework/hal/ic.o ${OBJECTDIR}/src/framework/hal/int.o ${OBJECTDIR}/src/framework/hal/port.o ${OBJECTDIR}/src/framework/hal/pwm.o ${OBJECTDIR}/src/framework/hal/tmr.o ${OBJECTDIR}/src/framework/hal/uart.o ${OBJECTDIR}/src/framework/sal/dio/inch.o ${OBJECTDIR}/src/framework/sal/dio/outch.o ${OBJECTDIR}/src/framework/sal/rtos/rtos.o ${OBJECTDIR}/src/framework/sal/rtos/rtos_cfg.o ${OBJECTDIR}/src/framework/sal/sys/exc.o ${OBJECTDIR}/src/framework/sal/sys/main.o ${OBJECTDIR}/src/framework/sal/udp/arp.o ${OBJECTDIR}/src/framework/sal/udp/dhcp.o ${OBJECTDIR}/src/framework/sal/udp/icmp.o ${OBJECTDIR}/src/framework/sal/udp/ipv4.o ${OBJECTDIR}/src/framework/sal/udp/udp.o ${OBJECTDIR}/src/app_udp.o
+POSSIBLE_DEPFILES=${OBJECTDIR}/src/framework/hal/adc.o.d ${OBJECTDIR}/src/framework/hal/can.o.d ${OBJECTDIR}/src/framework/hal/eep.o.d ${OBJECTDIR}/src/framework/hal/ethmac.o.d ${OBJECTDIR}/src/framework/hal/ethphy.o.d ${OBJECTDIR}/src/framework/hal/ic.o.d ${OBJECTDIR}/src/framework/hal/int.o.d ${OBJECTDIR}/src/framework/hal/port.o.d ${OBJECTDIR}/src/framework/hal/pwm.o.d ${OBJECTDIR}/src/framework/hal/tmr.o.d ${OBJECTDIR}/src/framework/hal/uart.o.d ${OBJECTDIR}/src/framework/sal/dio/inch.o.d ${OBJECTDIR}/src/framework/sal/dio/outch.o.d ${OBJECTDIR}/src/framework/sal/rtos/rtos.o.d ${OBJECTDIR}/src/framework/sal/rtos/rtos_cfg.o.d ${OBJECTDIR}/src/framework/sal/sys/exc.o.d ${OBJECTDIR}/src/framework/sal/sys/main.o.d ${OBJECTDIR}/src/framework/sal/udp/arp.o.d ${OBJECTDIR}/src/framework/sal/udp/dhcp.o.d ${OBJECTDIR}/src/framework/sal/udp/icmp.o.d ${OBJECTDIR}/src/framework/sal/udp/ipv4.o.d ${OBJECTDIR}/src/framework/sal/udp/udp.o.d ${OBJECTDIR}/src/app_udp.o.d
 
 # Object Files
-OBJECTFILES=${OBJECTDIR}/src/framework/sal/udp/arp.o ${OBJECTDIR}/src/framework/sal/udp/dhcp.o ${OBJECTDIR}/src/framework/sal/udp/icmp.o ${OBJECTDIR}/src/framework/sal/udp/ipv4.o ${OBJECTDIR}/src/framework/sal/udp/udp.o ${OBJECTDIR}/src/framework/sal/dio/inch.o ${OBJECTDIR}/src/framework/sal/dio/outch.o ${OBJECTDIR}/src/framework/sal/rtos/rtos.o ${OBJECTDIR}/src/framework/sal/rtos/rtos_cfg.o ${OBJECTDIR}/src/framework/sal/sys/exc.o ${OBJECTDIR}/src/framework/sal/sys/main.o ${OBJECTDIR}/src/app_udp.o ${OBJECTDIR}/src/framework/hal/adc.o ${OBJECTDIR}/src/framework/hal/can.o ${OBJECTDIR}/src/framework/hal/eep.o ${OBJECTDIR}/src/framework/hal/ethmac.o ${OBJECTDIR}/src/framework/hal/ethphy.o ${OBJECTDIR}/src/framework/hal/ic.o ${OBJECTDIR}/src/framework/hal/int.o ${OBJECTDIR}/src/framework/hal/port.o ${OBJECTDIR}/src/framework/hal/pwm.o ${OBJECTDIR}/src/framework/hal/tmr.o ${OBJECTDIR}/src/framework/hal/uart.o
+OBJECTFILES=${OBJECTDIR}/src/framework/hal/adc.o ${OBJECTDIR}/src/framework/hal/can.o ${OBJECTDIR}/src/framework/hal/eep.o ${OBJECTDIR}/src/framework/hal/ethmac.o ${OBJECTDIR}/src/framework/hal/ethphy.o ${OBJECTDIR}/src/framework/hal/ic.o ${OBJECTDIR}/src/framework/hal/int.o ${OBJECTDIR}/src/framework/hal/port.o ${OBJECTDIR}/src/framework/hal/pwm.o ${OBJECTDIR}/src/framework/hal/tmr.o ${OBJECTDIR}/src/framework/hal/uart.o ${OBJECTDIR}/src/framework/sal/dio/inch.o ${OBJECTDIR}/src/framework/sal/dio/outch.o ${OBJECTDIR}/src/framework/sal/rtos/rtos.o ${OBJECTDIR}/src/framework/sal/rtos/rtos_cfg.o ${OBJECTDIR}/src/framework/sal/sys/exc.o ${OBJECTDIR}/src/framework/sal/sys/main.o ${OBJECTDIR}/src/framework/sal/udp/arp.o ${OBJECTDIR}/src/framework/sal/udp/dhcp.o ${OBJECTDIR}/src/framework/sal/udp/icmp.o ${OBJECTDIR}/src/framework/sal/udp/ipv4.o ${OBJECTDIR}/src/framework/sal/udp/udp.o ${OBJECTDIR}/src/app_udp.o
 
 # Source Files
-SOURCEFILES=src/framework/sal/udp/arp.c src/framework/sal/udp/dhcp.c src/framework/sal/udp/icmp.c src/framework/sal/udp/ipv4.c src/framework/sal/udp/udp.c src/framework/sal/dio/inch.c src/framework/sal/dio/outch.c src/framework/sal/rtos/rtos.c src/framework/sal/rtos/rtos_cfg.c src/framework/sal/sys/exc.c src/framework/sal/sys/main.c src/app_udp.c src/framework/hal/adc.c src/framework/hal/can.c src/framework/hal/eep.c src/framework/hal/ethmac.c src/framework/hal/ethphy.c src/framework/hal/ic.c src/framework/hal/int.c src/framework/hal/port.c src/framework/hal/pwm.c src/framework/hal/tmr.c src/framework/hal/uart.c
+SOURCEFILES=src/framework/hal/adc.c src/framework/hal/can.c src/framework/hal/eep.c src/framework/hal/ethmac.c src/framework/hal/ethphy.c src/framework/hal/ic.c src/framework/hal/int.c src/framework/hal/port.c src/framework/hal/pwm.c src/framework/hal/tmr.c src/framework/hal/uart.c src/framework/sal/dio/inch.c src/framework/sal/dio/outch.c src/framework/sal/rtos/rtos.c src/framework/sal/rtos/rtos_cfg.c src/framework/sal/sys/exc.c src/framework/sal/sys/main.c src/framework/sal/udp/arp.c src/framework/sal/udp/dhcp.c src/framework/sal/udp/icmp.c src/framework/sal/udp/ipv4.c src/framework/sal/udp/udp.c src/app_udp.c
 
 
 CFLAGS=
@@ -91,78 +91,6 @@ endif
 # ------------------------------------------------------------------------------------
 # Rules for buildStep: compile
 ifeq ($(TYPE_IMAGE), DEBUG_RUN)
-${OBJECTDIR}/src/framework/sal/udp/arp.o: src/framework/sal/udp/arp.c  nbproject/Makefile-${CND_CONF}.mk
-	@${MKDIR} ${OBJECTDIR}/src/framework/sal/udp 
-	@${RM} ${OBJECTDIR}/src/framework/sal/udp/arp.o.d 
-	@${RM} ${OBJECTDIR}/src/framework/sal/udp/arp.o 
-	@${FIXDEPS} "${OBJECTDIR}/src/framework/sal/udp/arp.o.d" $(SILENT) -rsi ${MP_CC_DIR}../  -c ${MP_CC}  $(MP_EXTRA_CC_PRE) -g -D__DEBUG -D__MPLAB_DEBUGGER_PIC32MXSK=1 -fframe-base-loclist  -x c -c -mprocessor=$(MP_PROCESSOR_OPTION) -I"src" -MMD -MF "${OBJECTDIR}/src/framework/sal/udp/arp.o.d" -o ${OBJECTDIR}/src/framework/sal/udp/arp.o src/framework/sal/udp/arp.c   
-	
-${OBJECTDIR}/src/framework/sal/udp/dhcp.o: src/framework/sal/udp/dhcp.c  nbproject/Makefile-${CND_CONF}.mk
-	@${MKDIR} ${OBJECTDIR}/src/framework/sal/udp 
-	@${RM} ${OBJECTDIR}/src/framework/sal/udp/dhcp.o.d 
-	@${RM} ${OBJECTDIR}/src/framework/sal/udp/dhcp.o 
-	@${FIXDEPS} "${OBJECTDIR}/src/framework/sal/udp/dhcp.o.d" $(SILENT) -rsi ${MP_CC_DIR}../  -c ${MP_CC}  $(MP_EXTRA_CC_PRE) -g -D__DEBUG -D__MPLAB_DEBUGGER_PIC32MXSK=1 -fframe-base-loclist  -x c -c -mprocessor=$(MP_PROCESSOR_OPTION) -I"src" -MMD -MF "${OBJECTDIR}/src/framework/sal/udp/dhcp.o.d" -o ${OBJECTDIR}/src/framework/sal/udp/dhcp.o src/framework/sal/udp/dhcp.c   
-	
-${OBJECTDIR}/src/framework/sal/udp/icmp.o: src/framework/sal/udp/icmp.c  nbproject/Makefile-${CND_CONF}.mk
-	@${MKDIR} ${OBJECTDIR}/src/framework/sal/udp 
-	@${RM} ${OBJECTDIR}/src/framework/sal/udp/icmp.o.d 
-	@${RM} ${OBJECTDIR}/src/framework/sal/udp/icmp.o 
-	@${FIXDEPS} "${OBJECTDIR}/src/framework/sal/udp/icmp.o.d" $(SILENT) -rsi ${MP_CC_DIR}../  -c ${MP_CC}  $(MP_EXTRA_CC_PRE) -g -D__DEBUG -D__MPLAB_DEBUGGER_PIC32MXSK=1 -fframe-base-loclist  -x c -c -mprocessor=$(MP_PROCESSOR_OPTION) -I"src" -MMD -MF "${OBJECTDIR}/src/framework/sal/udp/icmp.o.d" -o ${OBJECTDIR}/src/framework/sal/udp/icmp.o src/framework/sal/udp/icmp.c   
-	
-${OBJECTDIR}/src/framework/sal/udp/ipv4.o: src/framework/sal/udp/ipv4.c  nbproject/Makefile-${CND_CONF}.mk
-	@${MKDIR} ${OBJECTDIR}/src/framework/sal/udp 
-	@${RM} ${OBJECTDIR}/src/framework/sal/udp/ipv4.o.d 
-	@${RM} ${OBJECTDIR}/src/framework/sal/udp/ipv4.o 
-	@${FIXDEPS} "${OBJECTDIR}/src/framework/sal/udp/ipv4.o.d" $(SILENT) -rsi ${MP_CC_DIR}../  -c ${MP_CC}  $(MP_EXTRA_CC_PRE) -g -D__DEBUG -D__MPLAB_DEBUGGER_PIC32MXSK=1 -fframe-base-loclist  -x c -c -mprocessor=$(MP_PROCESSOR_OPTION) -I"src" -MMD -MF "${OBJECTDIR}/src/framework/sal/udp/ipv4.o.d" -o ${OBJECTDIR}/src/framework/sal/udp/ipv4.o src/framework/sal/udp/ipv4.c   
-	
-${OBJECTDIR}/src/framework/sal/udp/udp.o: src/framework/sal/udp/udp.c  nbproject/Makefile-${CND_CONF}.mk
-	@${MKDIR} ${OBJECTDIR}/src/framework/sal/udp 
-	@${RM} ${OBJECTDIR}/src/framework/sal/udp/udp.o.d 
-	@${RM} ${OBJECTDIR}/src/framework/sal/udp/udp.o 
-	@${FIXDEPS} "${OBJECTDIR}/src/framework/sal/udp/udp.o.d" $(SILENT) -rsi ${MP_CC_DIR}../  -c ${MP_CC}  $(MP_EXTRA_CC_PRE) -g -D__DEBUG -D__MPLAB_DEBUGGER_PIC32MXSK=1 -fframe-base-loclist  -x c -c -mprocessor=$(MP_PROCESSOR_OPTION) -I"src" -MMD -MF "${OBJECTDIR}/src/framework/sal/udp/udp.o.d" -o ${OBJECTDIR}/src/framework/sal/udp/udp.o src/framework/sal/udp/udp.c   
-	
-${OBJECTDIR}/src/framework/sal/dio/inch.o: src/framework/sal/dio/inch.c  nbproject/Makefile-${CND_CONF}.mk
-	@${MKDIR} ${OBJECTDIR}/src/framework/sal/dio 
-	@${RM} ${OBJECTDIR}/src/framework/sal/dio/inch.o.d 
-	@${RM} ${OBJECTDIR}/src/framework/sal/dio/inch.o 
-	@${FIXDEPS} "${OBJECTDIR}/src/framework/sal/dio/inch.o.d" $(SILENT) -rsi ${MP_CC_DIR}../  -c ${MP_CC}  $(MP_EXTRA_CC_PRE) -g -D__DEBUG -D__MPLAB_DEBUGGER_PIC32MXSK=1 -fframe-base-loclist  -x c -c -mprocessor=$(MP_PROCESSOR_OPTION) -I"src" -MMD -MF "${OBJECTDIR}/src/framework/sal/dio/inch.o.d" -o ${OBJECTDIR}/src/framework/sal/dio/inch.o src/framework/sal/dio/inch.c   
-	
-${OBJECTDIR}/src/framework/sal/dio/outch.o: src/framework/sal/dio/outch.c  nbproject/Makefile-${CND_CONF}.mk
-	@${MKDIR} ${OBJECTDIR}/src/framework/sal/dio 
-	@${RM} ${OBJECTDIR}/src/framework/sal/dio/outch.o.d 
-	@${RM} ${OBJECTDIR}/src/framework/sal/dio/outch.o 
-	@${FIXDEPS} "${OBJECTDIR}/src/framework/sal/dio/outch.o.d" $(SILENT) -rsi ${MP_CC_DIR}../  -c ${MP_CC}  $(MP_EXTRA_CC_PRE) -g -D__DEBUG -D__MPLAB_DEBUGGER_PIC32MXSK=1 -fframe-base-loclist  -x c -c -mprocessor=$(MP_PROCESSOR_OPTION) -I"src" -MMD -MF "${OBJECTDIR}/src/framework/sal/dio/outch.o.d" -o ${OBJECTDIR}/src/framework/sal/dio/outch.o src/framework/sal/dio/outch.c   
-	
-${OBJECTDIR}/src/framework/sal/rtos/rtos.o: src/framework/sal/rtos/rtos.c  nbproject/Makefile-${CND_CONF}.mk
-	@${MKDIR} ${OBJECTDIR}/src/framework/sal/rtos 
-	@${RM} ${OBJECTDIR}/src/framework/sal/rtos/rtos.o.d 
-	@${RM} ${OBJECTDIR}/src/framework/sal/rtos/rtos.o 
-	@${FIXDEPS} "${OBJECTDIR}/src/framework/sal/rtos/rtos.o.d" $(SILENT) -rsi ${MP_CC_DIR}../  -c ${MP_CC}  $(MP_EXTRA_CC_PRE) -g -D__DEBUG -D__MPLAB_DEBUGGER_PIC32MXSK=1 -fframe-base-loclist  -x c -c -mprocessor=$(MP_PROCESSOR_OPTION) -I"src" -MMD -MF "${OBJECTDIR}/src/framework/sal/rtos/rtos.o.d" -o ${OBJECTDIR}/src/framework/sal/rtos/rtos.o src/framework/sal/rtos/rtos.c   
-	
-${OBJECTDIR}/src/framework/sal/rtos/rtos_cfg.o: src/framework/sal/rtos/rtos_cfg.c  nbproject/Makefile-${CND_CONF}.mk
-	@${MKDIR} ${OBJECTDIR}/src/framework/sal/rtos 
-	@${RM} ${OBJECTDIR}/src/framework/sal/rtos/rtos_cfg.o.d 
-	@${RM} ${OBJECTDIR}/src/framework/sal/rtos/rtos_cfg.o 
-	@${FIXDEPS} "${OBJECTDIR}/src/framework/sal/rtos/rtos_cfg.o.d" $(SILENT) -rsi ${MP_CC_DIR}../  -c ${MP_CC}  $(MP_EXTRA_CC_PRE) -g -D__DEBUG -D__MPLAB_DEBUGGER_PIC32MXSK=1 -fframe-base-loclist  -x c -c -mprocessor=$(MP_PROCESSOR_OPTION) -I"src" -MMD -MF "${OBJECTDIR}/src/framework/sal/rtos/rtos_cfg.o.d" -o ${OBJECTDIR}/src/framework/sal/rtos/rtos_cfg.o src/framework/sal/rtos/rtos_cfg.c   
-	
-${OBJECTDIR}/src/framework/sal/sys/exc.o: src/framework/sal/sys/exc.c  nbproject/Makefile-${CND_CONF}.mk
-	@${MKDIR} ${OBJECTDIR}/src/framework/sal/sys 
-	@${RM} ${OBJECTDIR}/src/framework/sal/sys/exc.o.d 
-	@${RM} ${OBJECTDIR}/src/framework/sal/sys/exc.o 
-	@${FIXDEPS} "${OBJECTDIR}/src/framework/sal/sys/exc.o.d" $(SILENT) -rsi ${MP_CC_DIR}../  -c ${MP_CC}  $(MP_EXTRA_CC_PRE) -g -D__DEBUG -D__MPLAB_DEBUGGER_PIC32MXSK=1 -fframe-base-loclist  -x c -c -mprocessor=$(MP_PROCESSOR_OPTION) -I"src" -MMD -MF "${OBJECTDIR}/src/framework/sal/sys/exc.o.d" -o ${OBJECTDIR}/src/framework/sal/sys/exc.o src/framework/sal/sys/exc.c   
-	
-${OBJECTDIR}/src/framework/sal/sys/main.o: src/framework/sal/sys/main.c  nbproject/Makefile-${CND_CONF}.mk
-	@${MKDIR} ${OBJECTDIR}/src/framework/sal/sys 
-	@${RM} ${OBJECTDIR}/src/framework/sal/sys/main.o.d 
-	@${RM} ${OBJECTDIR}/src/framework/sal/sys/main.o 
-	@${FIXDEPS} "${OBJECTDIR}/src/framework/sal/sys/main.o.d" $(SILENT) -rsi ${MP_CC_DIR}../  -c ${MP_CC}  $(MP_EXTRA_CC_PRE) -g -D__DEBUG -D__MPLAB_DEBUGGER_PIC32MXSK=1 -fframe-base-loclist  -x c -c -mprocessor=$(MP_PROCESSOR_OPTION) -I"src" -MMD -MF "${OBJECTDIR}/src/framework/sal/sys/main.o.d" -o ${OBJECTDIR}/src/framework/sal/sys/main.o src/framework/sal/sys/main.c   
-	
-${OBJECTDIR}/src/app_udp.o: src/app_udp.c  nbproject/Makefile-${CND_CONF}.mk
-	@${MKDIR} ${OBJECTDIR}/src 
-	@${RM} ${OBJECTDIR}/src/app_udp.o.d 
-	@${RM} ${OBJECTDIR}/src/app_udp.o 
-	@${FIXDEPS} "${OBJECTDIR}/src/app_udp.o.d" $(SILENT) -rsi ${MP_CC_DIR}../  -c ${MP_CC}  $(MP_EXTRA_CC_PRE) -g -D__DEBUG -D__MPLAB_DEBUGGER_PIC32MXSK=1 -fframe-base-loclist  -x c -c -mprocessor=$(MP_PROCESSOR_OPTION) -I"src" -MMD -MF "${OBJECTDIR}/src/app_udp.o.d" -o ${OBJECTDIR}/src/app_udp.o src/app_udp.c   
-	
 ${OBJECTDIR}/src/framework/hal/adc.o: src/framework/hal/adc.c  nbproject/Makefile-${CND_CONF}.mk
 	@${MKDIR} ${OBJECTDIR}/src/framework/hal 
 	@${RM} ${OBJECTDIR}/src/framework/hal/adc.o.d 
@@ -229,79 +157,79 @@ ${OBJECTDIR}/src/framework/hal/uart.o: src/framework/hal/uart.c  nbproject/Makef
 	@${RM} ${OBJECTDIR}/src/framework/hal/uart.o 
 	@${FIXDEPS} "${OBJECTDIR}/src/framework/hal/uart.o.d" $(SILENT) -rsi ${MP_CC_DIR}../  -c ${MP_CC}  $(MP_EXTRA_CC_PRE) -g -D__DEBUG -D__MPLAB_DEBUGGER_PIC32MXSK=1 -fframe-base-loclist  -x c -c -mprocessor=$(MP_PROCESSOR_OPTION) -I"src" -MMD -MF "${OBJECTDIR}/src/framework/hal/uart.o.d" -o ${OBJECTDIR}/src/framework/hal/uart.o src/framework/hal/uart.c   
 	
-else
-${OBJECTDIR}/src/framework/sal/udp/arp.o: src/framework/sal/udp/arp.c  nbproject/Makefile-${CND_CONF}.mk
-	@${MKDIR} ${OBJECTDIR}/src/framework/sal/udp 
-	@${RM} ${OBJECTDIR}/src/framework/sal/udp/arp.o.d 
-	@${RM} ${OBJECTDIR}/src/framework/sal/udp/arp.o 
-	@${FIXDEPS} "${OBJECTDIR}/src/framework/sal/udp/arp.o.d" $(SILENT) -rsi ${MP_CC_DIR}../  -c ${MP_CC}  $(MP_EXTRA_CC_PRE)  -g -x c -c -mprocessor=$(MP_PROCESSOR_OPTION) -I"src" -MMD -MF "${OBJECTDIR}/src/framework/sal/udp/arp.o.d" -o ${OBJECTDIR}/src/framework/sal/udp/arp.o src/framework/sal/udp/arp.c   
-	
-${OBJECTDIR}/src/framework/sal/udp/dhcp.o: src/framework/sal/udp/dhcp.c  nbproject/Makefile-${CND_CONF}.mk
-	@${MKDIR} ${OBJECTDIR}/src/framework/sal/udp 
-	@${RM} ${OBJECTDIR}/src/framework/sal/udp/dhcp.o.d 
-	@${RM} ${OBJECTDIR}/src/framework/sal/udp/dhcp.o 
-	@${FIXDEPS} "${OBJECTDIR}/src/framework/sal/udp/dhcp.o.d" $(SILENT) -rsi ${MP_CC_DIR}../  -c ${MP_CC}  $(MP_EXTRA_CC_PRE)  -g -x c -c -mprocessor=$(MP_PROCESSOR_OPTION) -I"src" -MMD -MF "${OBJECTDIR}/src/framework/sal/udp/dhcp.o.d" -o ${OBJECTDIR}/src/framework/sal/udp/dhcp.o src/framework/sal/udp/dhcp.c   
-	
-${OBJECTDIR}/src/framework/sal/udp/icmp.o: src/framework/sal/udp/icmp.c  nbproject/Makefile-${CND_CONF}.mk
-	@${MKDIR} ${OBJECTDIR}/src/framework/sal/udp 
-	@${RM} ${OBJECTDIR}/src/framework/sal/udp/icmp.o.d 
-	@${RM} ${OBJECTDIR}/src/framework/sal/udp/icmp.o 
-	@${FIXDEPS} "${OBJECTDIR}/src/framework/sal/udp/icmp.o.d" $(SILENT) -rsi ${MP_CC_DIR}../  -c ${MP_CC}  $(MP_EXTRA_CC_PRE)  -g -x c -c -mprocessor=$(MP_PROCESSOR_OPTION) -I"src" -MMD -MF "${OBJECTDIR}/src/framework/sal/udp/icmp.o.d" -o ${OBJECTDIR}/src/framework/sal/udp/icmp.o src/framework/sal/udp/icmp.c   
-	
-${OBJECTDIR}/src/framework/sal/udp/ipv4.o: src/framework/sal/udp/ipv4.c  nbproject/Makefile-${CND_CONF}.mk
-	@${MKDIR} ${OBJECTDIR}/src/framework/sal/udp 
-	@${RM} ${OBJECTDIR}/src/framework/sal/udp/ipv4.o.d 
-	@${RM} ${OBJECTDIR}/src/framework/sal/udp/ipv4.o 
-	@${FIXDEPS} "${OBJECTDIR}/src/framework/sal/udp/ipv4.o.d" $(SILENT) -rsi ${MP_CC_DIR}../  -c ${MP_CC}  $(MP_EXTRA_CC_PRE)  -g -x c -c -mprocessor=$(MP_PROCESSOR_OPTION) -I"src" -MMD -MF "${OBJECTDIR}/src/framework/sal/udp/ipv4.o.d" -o ${OBJECTDIR}/src/framework/sal/udp/ipv4.o src/framework/sal/udp/ipv4.c   
-	
-${OBJECTDIR}/src/framework/sal/udp/udp.o: src/framework/sal/udp/udp.c  nbproject/Makefile-${CND_CONF}.mk
-	@${MKDIR} ${OBJECTDIR}/src/framework/sal/udp 
-	@${RM} ${OBJECTDIR}/src/framework/sal/udp/udp.o.d 
-	@${RM} ${OBJECTDIR}/src/framework/sal/udp/udp.o 
-	@${FIXDEPS} "${OBJECTDIR}/src/framework/sal/udp/udp.o.d" $(SILENT) -rsi ${MP_CC_DIR}../  -c ${MP_CC}  $(MP_EXTRA_CC_PRE)  -g -x c -c -mprocessor=$(MP_PROCESSOR_OPTION) -I"src" -MMD -MF "${OBJECTDIR}/src/framework/sal/udp/udp.o.d" -o ${OBJECTDIR}/src/framework/sal/udp/udp.o src/framework/sal/udp/udp.c   
-	
 ${OBJECTDIR}/src/framework/sal/dio/inch.o: src/framework/sal/dio/inch.c  nbproject/Makefile-${CND_CONF}.mk
 	@${MKDIR} ${OBJECTDIR}/src/framework/sal/dio 
 	@${RM} ${OBJECTDIR}/src/framework/sal/dio/inch.o.d 
 	@${RM} ${OBJECTDIR}/src/framework/sal/dio/inch.o 
-	@${FIXDEPS} "${OBJECTDIR}/src/framework/sal/dio/inch.o.d" $(SILENT) -rsi ${MP_CC_DIR}../  -c ${MP_CC}  $(MP_EXTRA_CC_PRE)  -g -x c -c -mprocessor=$(MP_PROCESSOR_OPTION) -I"src" -MMD -MF "${OBJECTDIR}/src/framework/sal/dio/inch.o.d" -o ${OBJECTDIR}/src/framework/sal/dio/inch.o src/framework/sal/dio/inch.c   
+	@${FIXDEPS} "${OBJECTDIR}/src/framework/sal/dio/inch.o.d" $(SILENT) -rsi ${MP_CC_DIR}../  -c ${MP_CC}  $(MP_EXTRA_CC_PRE) -g -D__DEBUG -D__MPLAB_DEBUGGER_PIC32MXSK=1 -fframe-base-loclist  -x c -c -mprocessor=$(MP_PROCESSOR_OPTION) -I"src" -MMD -MF "${OBJECTDIR}/src/framework/sal/dio/inch.o.d" -o ${OBJECTDIR}/src/framework/sal/dio/inch.o src/framework/sal/dio/inch.c   
 	
 ${OBJECTDIR}/src/framework/sal/dio/outch.o: src/framework/sal/dio/outch.c  nbproject/Makefile-${CND_CONF}.mk
 	@${MKDIR} ${OBJECTDIR}/src/framework/sal/dio 
 	@${RM} ${OBJECTDIR}/src/framework/sal/dio/outch.o.d 
 	@${RM} ${OBJECTDIR}/src/framework/sal/dio/outch.o 
-	@${FIXDEPS} "${OBJECTDIR}/src/framework/sal/dio/outch.o.d" $(SILENT) -rsi ${MP_CC_DIR}../  -c ${MP_CC}  $(MP_EXTRA_CC_PRE)  -g -x c -c -mprocessor=$(MP_PROCESSOR_OPTION) -I"src" -MMD -MF "${OBJECTDIR}/src/framework/sal/dio/outch.o.d" -o ${OBJECTDIR}/src/framework/sal/dio/outch.o src/framework/sal/dio/outch.c   
+	@${FIXDEPS} "${OBJECTDIR}/src/framework/sal/dio/outch.o.d" $(SILENT) -rsi ${MP_CC_DIR}../  -c ${MP_CC}  $(MP_EXTRA_CC_PRE) -g -D__DEBUG -D__MPLAB_DEBUGGER_PIC32MXSK=1 -fframe-base-loclist  -x c -c -mprocessor=$(MP_PROCESSOR_OPTION) -I"src" -MMD -MF "${OBJECTDIR}/src/framework/sal/dio/outch.o.d" -o ${OBJECTDIR}/src/framework/sal/dio/outch.o src/framework/sal/dio/outch.c   
 	
 ${OBJECTDIR}/src/framework/sal/rtos/rtos.o: src/framework/sal/rtos/rtos.c  nbproject/Makefile-${CND_CONF}.mk
 	@${MKDIR} ${OBJECTDIR}/src/framework/sal/rtos 
 	@${RM} ${OBJECTDIR}/src/framework/sal/rtos/rtos.o.d 
 	@${RM} ${OBJECTDIR}/src/framework/sal/rtos/rtos.o 
-	@${FIXDEPS} "${OBJECTDIR}/src/framework/sal/rtos/rtos.o.d" $(SILENT) -rsi ${MP_CC_DIR}../  -c ${MP_CC}  $(MP_EXTRA_CC_PRE)  -g -x c -c -mprocessor=$(MP_PROCESSOR_OPTION) -I"src" -MMD -MF "${OBJECTDIR}/src/framework/sal/rtos/rtos.o.d" -o ${OBJECTDIR}/src/framework/sal/rtos/rtos.o src/framework/sal/rtos/rtos.c   
+	@${FIXDEPS} "${OBJECTDIR}/src/framework/sal/rtos/rtos.o.d" $(SILENT) -rsi ${MP_CC_DIR}../  -c ${MP_CC}  $(MP_EXTRA_CC_PRE) -g -D__DEBUG -D__MPLAB_DEBUGGER_PIC32MXSK=1 -fframe-base-loclist  -x c -c -mprocessor=$(MP_PROCESSOR_OPTION) -I"src" -MMD -MF "${OBJECTDIR}/src/framework/sal/rtos/rtos.o.d" -o ${OBJECTDIR}/src/framework/sal/rtos/rtos.o src/framework/sal/rtos/rtos.c   
 	
 ${OBJECTDIR}/src/framework/sal/rtos/rtos_cfg.o: src/framework/sal/rtos/rtos_cfg.c  nbproject/Makefile-${CND_CONF}.mk
 	@${MKDIR} ${OBJECTDIR}/src/framework/sal/rtos 
 	@${RM} ${OBJECTDIR}/src/framework/sal/rtos/rtos_cfg.o.d 
 	@${RM} ${OBJECTDIR}/src/framework/sal/rtos/rtos_cfg.o 
-	@${FIXDEPS} "${OBJECTDIR}/src/framework/sal/rtos/rtos_cfg.o.d" $(SILENT) -rsi ${MP_CC_DIR}../  -c ${MP_CC}  $(MP_EXTRA_CC_PRE)  -g -x c -c -mprocessor=$(MP_PROCESSOR_OPTION) -I"src" -MMD -MF "${OBJECTDIR}/src/framework/sal/rtos/rtos_cfg.o.d" -o ${OBJECTDIR}/src/framework/sal/rtos/rtos_cfg.o src/framework/sal/rtos/rtos_cfg.c   
+	@${FIXDEPS} "${OBJECTDIR}/src/framework/sal/rtos/rtos_cfg.o.d" $(SILENT) -rsi ${MP_CC_DIR}../  -c ${MP_CC}  $(MP_EXTRA_CC_PRE) -g -D__DEBUG -D__MPLAB_DEBUGGER_PIC32MXSK=1 -fframe-base-loclist  -x c -c -mprocessor=$(MP_PROCESSOR_OPTION) -I"src" -MMD -MF "${OBJECTDIR}/src/framework/sal/rtos/rtos_cfg.o.d" -o ${OBJECTDIR}/src/framework/sal/rtos/rtos_cfg.o src/framework/sal/rtos/rtos_cfg.c   
 	
 ${OBJECTDIR}/src/framework/sal/sys/exc.o: src/framework/sal/sys/exc.c  nbproject/Makefile-${CND_CONF}.mk
 	@${MKDIR} ${OBJECTDIR}/src/framework/sal/sys 
 	@${RM} ${OBJECTDIR}/src/framework/sal/sys/exc.o.d 
 	@${RM} ${OBJECTDIR}/src/framework/sal/sys/exc.o 
-	@${FIXDEPS} "${OBJECTDIR}/src/framework/sal/sys/exc.o.d" $(SILENT) -rsi ${MP_CC_DIR}../  -c ${MP_CC}  $(MP_EXTRA_CC_PRE)  -g -x c -c -mprocessor=$(MP_PROCESSOR_OPTION) -I"src" -MMD -MF "${OBJECTDIR}/src/framework/sal/sys/exc.o.d" -o ${OBJECTDIR}/src/framework/sal/sys/exc.o src/framework/sal/sys/exc.c   
+	@${FIXDEPS} "${OBJECTDIR}/src/framework/sal/sys/exc.o.d" $(SILENT) -rsi ${MP_CC_DIR}../  -c ${MP_CC}  $(MP_EXTRA_CC_PRE) -g -D__DEBUG -D__MPLAB_DEBUGGER_PIC32MXSK=1 -fframe-base-loclist  -x c -c -mprocessor=$(MP_PROCESSOR_OPTION) -I"src" -MMD -MF "${OBJECTDIR}/src/framework/sal/sys/exc.o.d" -o ${OBJECTDIR}/src/framework/sal/sys/exc.o src/framework/sal/sys/exc.c   
 	
 ${OBJECTDIR}/src/framework/sal/sys/main.o: src/framework/sal/sys/main.c  nbproject/Makefile-${CND_CONF}.mk
 	@${MKDIR} ${OBJECTDIR}/src/framework/sal/sys 
 	@${RM} ${OBJECTDIR}/src/framework/sal/sys/main.o.d 
 	@${RM} ${OBJECTDIR}/src/framework/sal/sys/main.o 
-	@${FIXDEPS} "${OBJECTDIR}/src/framework/sal/sys/main.o.d" $(SILENT) -rsi ${MP_CC_DIR}../  -c ${MP_CC}  $(MP_EXTRA_CC_PRE)  -g -x c -c -mprocessor=$(MP_PROCESSOR_OPTION) -I"src" -MMD -MF "${OBJECTDIR}/src/framework/sal/sys/main.o.d" -o ${OBJECTDIR}/src/framework/sal/sys/main.o src/framework/sal/sys/main.c   
+	@${FIXDEPS} "${OBJECTDIR}/src/framework/sal/sys/main.o.d" $(SILENT) -rsi ${MP_CC_DIR}../  -c ${MP_CC}  $(MP_EXTRA_CC_PRE) -g -D__DEBUG -D__MPLAB_DEBUGGER_PIC32MXSK=1 -fframe-base-loclist  -x c -c -mprocessor=$(MP_PROCESSOR_OPTION) -I"src" -MMD -MF "${OBJECTDIR}/src/framework/sal/sys/main.o.d" -o ${OBJECTDIR}/src/framework/sal/sys/main.o src/framework/sal/sys/main.c   
+	
+${OBJECTDIR}/src/framework/sal/udp/arp.o: src/framework/sal/udp/arp.c  nbproject/Makefile-${CND_CONF}.mk
+	@${MKDIR} ${OBJECTDIR}/src/framework/sal/udp 
+	@${RM} ${OBJECTDIR}/src/framework/sal/udp/arp.o.d 
+	@${RM} ${OBJECTDIR}/src/framework/sal/udp/arp.o 
+	@${FIXDEPS} "${OBJECTDIR}/src/framework/sal/udp/arp.o.d" $(SILENT) -rsi ${MP_CC_DIR}../  -c ${MP_CC}  $(MP_EXTRA_CC_PRE) -g -D__DEBUG -D__MPLAB_DEBUGGER_PIC32MXSK=1 -fframe-base-loclist  -x c -c -mprocessor=$(MP_PROCESSOR_OPTION) -I"src" -MMD -MF "${OBJECTDIR}/src/framework/sal/udp/arp.o.d" -o ${OBJECTDIR}/src/framework/sal/udp/arp.o src/framework/sal/udp/arp.c   
+	
+${OBJECTDIR}/src/framework/sal/udp/dhcp.o: src/framework/sal/udp/dhcp.c  nbproject/Makefile-${CND_CONF}.mk
+	@${MKDIR} ${OBJECTDIR}/src/framework/sal/udp 
+	@${RM} ${OBJECTDIR}/src/framework/sal/udp/dhcp.o.d 
+	@${RM} ${OBJECTDIR}/src/framework/sal/udp/dhcp.o 
+	@${FIXDEPS} "${OBJECTDIR}/src/framework/sal/udp/dhcp.o.d" $(SILENT) -rsi ${MP_CC_DIR}../  -c ${MP_CC}  $(MP_EXTRA_CC_PRE) -g -D__DEBUG -D__MPLAB_DEBUGGER_PIC32MXSK=1 -fframe-base-loclist  -x c -c -mprocessor=$(MP_PROCESSOR_OPTION) -I"src" -MMD -MF "${OBJECTDIR}/src/framework/sal/udp/dhcp.o.d" -o ${OBJECTDIR}/src/framework/sal/udp/dhcp.o src/framework/sal/udp/dhcp.c   
+	
+${OBJECTDIR}/src/framework/sal/udp/icmp.o: src/framework/sal/udp/icmp.c  nbproject/Makefile-${CND_CONF}.mk
+	@${MKDIR} ${OBJECTDIR}/src/framework/sal/udp 
+	@${RM} ${OBJECTDIR}/src/framework/sal/udp/icmp.o.d 
+	@${RM} ${OBJECTDIR}/src/framework/sal/udp/icmp.o 
+	@${FIXDEPS} "${OBJECTDIR}/src/framework/sal/udp/icmp.o.d" $(SILENT) -rsi ${MP_CC_DIR}../  -c ${MP_CC}  $(MP_EXTRA_CC_PRE) -g -D__DEBUG -D__MPLAB_DEBUGGER_PIC32MXSK=1 -fframe-base-loclist  -x c -c -mprocessor=$(MP_PROCESSOR_OPTION) -I"src" -MMD -MF "${OBJECTDIR}/src/framework/sal/udp/icmp.o.d" -o ${OBJECTDIR}/src/framework/sal/udp/icmp.o src/framework/sal/udp/icmp.c   
+	
+${OBJECTDIR}/src/framework/sal/udp/ipv4.o: src/framework/sal/udp/ipv4.c  nbproject/Makefile-${CND_CONF}.mk
+	@${MKDIR} ${OBJECTDIR}/src/framework/sal/udp 
+	@${RM} ${OBJECTDIR}/src/framework/sal/udp/ipv4.o.d 
+	@${RM} ${OBJECTDIR}/src/framework/sal/udp/ipv4.o 
+	@${FIXDEPS} "${OBJECTDIR}/src/framework/sal/udp/ipv4.o.d" $(SILENT) -rsi ${MP_CC_DIR}../  -c ${MP_CC}  $(MP_EXTRA_CC_PRE) -g -D__DEBUG -D__MPLAB_DEBUGGER_PIC32MXSK=1 -fframe-base-loclist  -x c -c -mprocessor=$(MP_PROCESSOR_OPTION) -I"src" -MMD -MF "${OBJECTDIR}/src/framework/sal/udp/ipv4.o.d" -o ${OBJECTDIR}/src/framework/sal/udp/ipv4.o src/framework/sal/udp/ipv4.c   
+	
+${OBJECTDIR}/src/framework/sal/udp/udp.o: src/framework/sal/udp/udp.c  nbproject/Makefile-${CND_CONF}.mk
+	@${MKDIR} ${OBJECTDIR}/src/framework/sal/udp 
+	@${RM} ${OBJECTDIR}/src/framework/sal/udp/udp.o.d 
+	@${RM} ${OBJECTDIR}/src/framework/sal/udp/udp.o 
+	@${FIXDEPS} "${OBJECTDIR}/src/framework/sal/udp/udp.o.d" $(SILENT) -rsi ${MP_CC_DIR}../  -c ${MP_CC}  $(MP_EXTRA_CC_PRE) -g -D__DEBUG -D__MPLAB_DEBUGGER_PIC32MXSK=1 -fframe-base-loclist  -x c -c -mprocessor=$(MP_PROCESSOR_OPTION) -I"src" -MMD -MF "${OBJECTDIR}/src/framework/sal/udp/udp.o.d" -o ${OBJECTDIR}/src/framework/sal/udp/udp.o src/framework/sal/udp/udp.c   
 	
 ${OBJECTDIR}/src/app_udp.o: src/app_udp.c  nbproject/Makefile-${CND_CONF}.mk
 	@${MKDIR} ${OBJECTDIR}/src 
 	@${RM} ${OBJECTDIR}/src/app_udp.o.d 
 	@${RM} ${OBJECTDIR}/src/app_udp.o 
-	@${FIXDEPS} "${OBJECTDIR}/src/app_udp.o.d" $(SILENT) -rsi ${MP_CC_DIR}../  -c ${MP_CC}  $(MP_EXTRA_CC_PRE)  -g -x c -c -mprocessor=$(MP_PROCESSOR_OPTION) -I"src" -MMD -MF "${OBJECTDIR}/src/app_udp.o.d" -o ${OBJECTDIR}/src/app_udp.o src/app_udp.c   
+	@${FIXDEPS} "${OBJECTDIR}/src/app_udp.o.d" $(SILENT) -rsi ${MP_CC_DIR}../  -c ${MP_CC}  $(MP_EXTRA_CC_PRE) -g -D__DEBUG -D__MPLAB_DEBUGGER_PIC32MXSK=1 -fframe-base-loclist  -x c -c -mprocessor=$(MP_PROCESSOR_OPTION) -I"src" -MMD -MF "${OBJECTDIR}/src/app_udp.o.d" -o ${OBJECTDIR}/src/app_udp.o src/app_udp.c   
 	
+else
 ${OBJECTDIR}/src/framework/hal/adc.o: src/framework/hal/adc.c  nbproject/Makefile-${CND_CONF}.mk
 	@${MKDIR} ${OBJECTDIR}/src/framework/hal 
 	@${RM} ${OBJECTDIR}/src/framework/hal/adc.o.d 
@@ -367,6 +295,78 @@ ${OBJECTDIR}/src/framework/hal/uart.o: src/framework/hal/uart.c  nbproject/Makef
 	@${RM} ${OBJECTDIR}/src/framework/hal/uart.o.d 
 	@${RM} ${OBJECTDIR}/src/framework/hal/uart.o 
 	@${FIXDEPS} "${OBJECTDIR}/src/framework/hal/uart.o.d" $(SILENT) -rsi ${MP_CC_DIR}../  -c ${MP_CC}  $(MP_EXTRA_CC_PRE)  -g -x c -c -mprocessor=$(MP_PROCESSOR_OPTION) -I"src" -MMD -MF "${OBJECTDIR}/src/framework/hal/uart.o.d" -o ${OBJECTDIR}/src/framework/hal/uart.o src/framework/hal/uart.c   
+	
+${OBJECTDIR}/src/framework/sal/dio/inch.o: src/framework/sal/dio/inch.c  nbproject/Makefile-${CND_CONF}.mk
+	@${MKDIR} ${OBJECTDIR}/src/framework/sal/dio 
+	@${RM} ${OBJECTDIR}/src/framework/sal/dio/inch.o.d 
+	@${RM} ${OBJECTDIR}/src/framework/sal/dio/inch.o 
+	@${FIXDEPS} "${OBJECTDIR}/src/framework/sal/dio/inch.o.d" $(SILENT) -rsi ${MP_CC_DIR}../  -c ${MP_CC}  $(MP_EXTRA_CC_PRE)  -g -x c -c -mprocessor=$(MP_PROCESSOR_OPTION) -I"src" -MMD -MF "${OBJECTDIR}/src/framework/sal/dio/inch.o.d" -o ${OBJECTDIR}/src/framework/sal/dio/inch.o src/framework/sal/dio/inch.c   
+	
+${OBJECTDIR}/src/framework/sal/dio/outch.o: src/framework/sal/dio/outch.c  nbproject/Makefile-${CND_CONF}.mk
+	@${MKDIR} ${OBJECTDIR}/src/framework/sal/dio 
+	@${RM} ${OBJECTDIR}/src/framework/sal/dio/outch.o.d 
+	@${RM} ${OBJECTDIR}/src/framework/sal/dio/outch.o 
+	@${FIXDEPS} "${OBJECTDIR}/src/framework/sal/dio/outch.o.d" $(SILENT) -rsi ${MP_CC_DIR}../  -c ${MP_CC}  $(MP_EXTRA_CC_PRE)  -g -x c -c -mprocessor=$(MP_PROCESSOR_OPTION) -I"src" -MMD -MF "${OBJECTDIR}/src/framework/sal/dio/outch.o.d" -o ${OBJECTDIR}/src/framework/sal/dio/outch.o src/framework/sal/dio/outch.c   
+	
+${OBJECTDIR}/src/framework/sal/rtos/rtos.o: src/framework/sal/rtos/rtos.c  nbproject/Makefile-${CND_CONF}.mk
+	@${MKDIR} ${OBJECTDIR}/src/framework/sal/rtos 
+	@${RM} ${OBJECTDIR}/src/framework/sal/rtos/rtos.o.d 
+	@${RM} ${OBJECTDIR}/src/framework/sal/rtos/rtos.o 
+	@${FIXDEPS} "${OBJECTDIR}/src/framework/sal/rtos/rtos.o.d" $(SILENT) -rsi ${MP_CC_DIR}../  -c ${MP_CC}  $(MP_EXTRA_CC_PRE)  -g -x c -c -mprocessor=$(MP_PROCESSOR_OPTION) -I"src" -MMD -MF "${OBJECTDIR}/src/framework/sal/rtos/rtos.o.d" -o ${OBJECTDIR}/src/framework/sal/rtos/rtos.o src/framework/sal/rtos/rtos.c   
+	
+${OBJECTDIR}/src/framework/sal/rtos/rtos_cfg.o: src/framework/sal/rtos/rtos_cfg.c  nbproject/Makefile-${CND_CONF}.mk
+	@${MKDIR} ${OBJECTDIR}/src/framework/sal/rtos 
+	@${RM} ${OBJECTDIR}/src/framework/sal/rtos/rtos_cfg.o.d 
+	@${RM} ${OBJECTDIR}/src/framework/sal/rtos/rtos_cfg.o 
+	@${FIXDEPS} "${OBJECTDIR}/src/framework/sal/rtos/rtos_cfg.o.d" $(SILENT) -rsi ${MP_CC_DIR}../  -c ${MP_CC}  $(MP_EXTRA_CC_PRE)  -g -x c -c -mprocessor=$(MP_PROCESSOR_OPTION) -I"src" -MMD -MF "${OBJECTDIR}/src/framework/sal/rtos/rtos_cfg.o.d" -o ${OBJECTDIR}/src/framework/sal/rtos/rtos_cfg.o src/framework/sal/rtos/rtos_cfg.c   
+	
+${OBJECTDIR}/src/framework/sal/sys/exc.o: src/framework/sal/sys/exc.c  nbproject/Makefile-${CND_CONF}.mk
+	@${MKDIR} ${OBJECTDIR}/src/framework/sal/sys 
+	@${RM} ${OBJECTDIR}/src/framework/sal/sys/exc.o.d 
+	@${RM} ${OBJECTDIR}/src/framework/sal/sys/exc.o 
+	@${FIXDEPS} "${OBJECTDIR}/src/framework/sal/sys/exc.o.d" $(SILENT) -rsi ${MP_CC_DIR}../  -c ${MP_CC}  $(MP_EXTRA_CC_PRE)  -g -x c -c -mprocessor=$(MP_PROCESSOR_OPTION) -I"src" -MMD -MF "${OBJECTDIR}/src/framework/sal/sys/exc.o.d" -o ${OBJECTDIR}/src/framework/sal/sys/exc.o src/framework/sal/sys/exc.c   
+	
+${OBJECTDIR}/src/framework/sal/sys/main.o: src/framework/sal/sys/main.c  nbproject/Makefile-${CND_CONF}.mk
+	@${MKDIR} ${OBJECTDIR}/src/framework/sal/sys 
+	@${RM} ${OBJECTDIR}/src/framework/sal/sys/main.o.d 
+	@${RM} ${OBJECTDIR}/src/framework/sal/sys/main.o 
+	@${FIXDEPS} "${OBJECTDIR}/src/framework/sal/sys/main.o.d" $(SILENT) -rsi ${MP_CC_DIR}../  -c ${MP_CC}  $(MP_EXTRA_CC_PRE)  -g -x c -c -mprocessor=$(MP_PROCESSOR_OPTION) -I"src" -MMD -MF "${OBJECTDIR}/src/framework/sal/sys/main.o.d" -o ${OBJECTDIR}/src/framework/sal/sys/main.o src/framework/sal/sys/main.c   
+	
+${OBJECTDIR}/src/framework/sal/udp/arp.o: src/framework/sal/udp/arp.c  nbproject/Makefile-${CND_CONF}.mk
+	@${MKDIR} ${OBJECTDIR}/src/framework/sal/udp 
+	@${RM} ${OBJECTDIR}/src/framework/sal/udp/arp.o.d 
+	@${RM} ${OBJECTDIR}/src/framework/sal/udp/arp.o 
+	@${FIXDEPS} "${OBJECTDIR}/src/framework/sal/udp/arp.o.d" $(SILENT) -rsi ${MP_CC_DIR}../  -c ${MP_CC}  $(MP_EXTRA_CC_PRE)  -g -x c -c -mprocessor=$(MP_PROCESSOR_OPTION) -I"src" -MMD -MF "${OBJECTDIR}/src/framework/sal/udp/arp.o.d" -o ${OBJECTDIR}/src/framework/sal/udp/arp.o src/framework/sal/udp/arp.c   
+	
+${OBJECTDIR}/src/framework/sal/udp/dhcp.o: src/framework/sal/udp/dhcp.c  nbproject/Makefile-${CND_CONF}.mk
+	@${MKDIR} ${OBJECTDIR}/src/framework/sal/udp 
+	@${RM} ${OBJECTDIR}/src/framework/sal/udp/dhcp.o.d 
+	@${RM} ${OBJECTDIR}/src/framework/sal/udp/dhcp.o 
+	@${FIXDEPS} "${OBJECTDIR}/src/framework/sal/udp/dhcp.o.d" $(SILENT) -rsi ${MP_CC_DIR}../  -c ${MP_CC}  $(MP_EXTRA_CC_PRE)  -g -x c -c -mprocessor=$(MP_PROCESSOR_OPTION) -I"src" -MMD -MF "${OBJECTDIR}/src/framework/sal/udp/dhcp.o.d" -o ${OBJECTDIR}/src/framework/sal/udp/dhcp.o src/framework/sal/udp/dhcp.c   
+	
+${OBJECTDIR}/src/framework/sal/udp/icmp.o: src/framework/sal/udp/icmp.c  nbproject/Makefile-${CND_CONF}.mk
+	@${MKDIR} ${OBJECTDIR}/src/framework/sal/udp 
+	@${RM} ${OBJECTDIR}/src/framework/sal/udp/icmp.o.d 
+	@${RM} ${OBJECTDIR}/src/framework/sal/udp/icmp.o 
+	@${FIXDEPS} "${OBJECTDIR}/src/framework/sal/udp/icmp.o.d" $(SILENT) -rsi ${MP_CC_DIR}../  -c ${MP_CC}  $(MP_EXTRA_CC_PRE)  -g -x c -c -mprocessor=$(MP_PROCESSOR_OPTION) -I"src" -MMD -MF "${OBJECTDIR}/src/framework/sal/udp/icmp.o.d" -o ${OBJECTDIR}/src/framework/sal/udp/icmp.o src/framework/sal/udp/icmp.c   
+	
+${OBJECTDIR}/src/framework/sal/udp/ipv4.o: src/framework/sal/udp/ipv4.c  nbproject/Makefile-${CND_CONF}.mk
+	@${MKDIR} ${OBJECTDIR}/src/framework/sal/udp 
+	@${RM} ${OBJECTDIR}/src/framework/sal/udp/ipv4.o.d 
+	@${RM} ${OBJECTDIR}/src/framework/sal/udp/ipv4.o 
+	@${FIXDEPS} "${OBJECTDIR}/src/framework/sal/udp/ipv4.o.d" $(SILENT) -rsi ${MP_CC_DIR}../  -c ${MP_CC}  $(MP_EXTRA_CC_PRE)  -g -x c -c -mprocessor=$(MP_PROCESSOR_OPTION) -I"src" -MMD -MF "${OBJECTDIR}/src/framework/sal/udp/ipv4.o.d" -o ${OBJECTDIR}/src/framework/sal/udp/ipv4.o src/framework/sal/udp/ipv4.c   
+	
+${OBJECTDIR}/src/framework/sal/udp/udp.o: src/framework/sal/udp/udp.c  nbproject/Makefile-${CND_CONF}.mk
+	@${MKDIR} ${OBJECTDIR}/src/framework/sal/udp 
+	@${RM} ${OBJECTDIR}/src/framework/sal/udp/udp.o.d 
+	@${RM} ${OBJECTDIR}/src/framework/sal/udp/udp.o 
+	@${FIXDEPS} "${OBJECTDIR}/src/framework/sal/udp/udp.o.d" $(SILENT) -rsi ${MP_CC_DIR}../  -c ${MP_CC}  $(MP_EXTRA_CC_PRE)  -g -x c -c -mprocessor=$(MP_PROCESSOR_OPTION) -I"src" -MMD -MF "${OBJECTDIR}/src/framework/sal/udp/udp.o.d" -o ${OBJECTDIR}/src/framework/sal/udp/udp.o src/framework/sal/udp/udp.c   
+	
+${OBJECTDIR}/src/app_udp.o: src/app_udp.c  nbproject/Makefile-${CND_CONF}.mk
+	@${MKDIR} ${OBJECTDIR}/src 
+	@${RM} ${OBJECTDIR}/src/app_udp.o.d 
+	@${RM} ${OBJECTDIR}/src/app_udp.o 
+	@${FIXDEPS} "${OBJECTDIR}/src/app_udp.o.d" $(SILENT) -rsi ${MP_CC_DIR}../  -c ${MP_CC}  $(MP_EXTRA_CC_PRE)  -g -x c -c -mprocessor=$(MP_PROCESSOR_OPTION) -I"src" -MMD -MF "${OBJECTDIR}/src/app_udp.o.d" -o ${OBJECTDIR}/src/app_udp.o src/app_udp.c   
 	
 endif
 

@@ -41,6 +41,10 @@
         </logicalFolder>
       </logicalFolder>
       <itemPath>src/app_udp.h</itemPath>
+      <itemPath>src/framework/fw_common.h</itemPath>
+      <itemPath>src/framework/fw_config.h</itemPath>
+      <itemPath>src/framework/p32mx795f512l.h</itemPath>
+      <itemPath>src/framework/ppic32mx.h</itemPath>
     </logicalFolder>
     <logicalFolder name="LinkerScript"
                    displayName="Linker Files"
@@ -89,6 +93,7 @@
                    displayName="Important Files"
                    projectFiles="false">
       <itemPath>Makefile</itemPath>
+      <itemPath>README.md</itemPath>
     </logicalFolder>
   </logicalFolder>
   <sourceRootList>

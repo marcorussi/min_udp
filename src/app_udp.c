@@ -29,6 +29,7 @@
  *
  * Evolution of the file:
  * 10/08/2015 - File created - Marco Russi
+ * 16/08/2015 - Minor changes and coding improvement for release - Marco Russi
  *
 */
 
@@ -42,11 +43,44 @@
 #include "framework/hal/port.h"
 #include "framework/sal/rtos/rtos.h"
 #include "framework/sal/udp/udp.h"
+#include "framework/sal/dio/outch.h"
+
+
+
+
+/* ---------------- Local definitions ---------------- */
+
+/* Remote IP address for UDP sockets */
+#define UL_UDP_SOCKET_REMOTE_IP_ADD             (0x0A2A0001)  /* 10.42.0.1 */
+
+/* LEDs UDP sockets source /destination ports */
+#define LED_1_UDP_SRC_PORT                      (2020)
+#define LED_1_UDP_DST_PORT                      (1010)
+#define LED_2_UDP_SRC_PORT                      (4040)
+#define LED_2_UDP_DST_PORT                      (3030)
+
+/* LEDs UDP sockets numbers */
+#define LED_1_UDP_SOCKET_NUM                    (UDP_SOCKET_2)
+#define LED_2_UDP_SOCKET_NUM                    (UDP_SOCKET_5)
+
+/* LEDs UDP sockets numbers */
+#define LED_1_OUT_CHANNEL                       (OUTCH_KE_CHANNEL_1)
+#define LED_2_OUT_CHANNEL                       (OUTCH_KE_CHANNEL_2)
 
 
 
 
 /* ---------------- Local typedef definitions ---------------- */
+
+/* app LED indexes enum */
+typedef enum
+{
+    KE_FIRST_LED
+   ,KE_LED_1 = KE_FIRST_LED
+   ,KE_LED_2
+   ,KE_LAST_LED = KE_LED_2
+   ,KE_LED_NAX_NUM
+} ke_AppLEDIndexes;
 
 /* connection states enum */
 typedef enum
@@ -54,33 +88,67 @@ typedef enum
     KE_FIRST_STATE
    ,KE_INIT_STATE = KE_FIRST_STATE
    ,KE_RUN_STATE
-   ,KE_REPLY_STATE
    ,KE_WAIT_STATE
    ,KE_IDLE_STATE
    ,KE_LAST_STATE = KE_IDLE_STATE
 } ke_ConnectionStatus;
 
 
-/* TEST requests enum */
+/* UDP packets request types enum */
 typedef enum
 {
     KE_INVALID_REQ
    ,KE_LED_OFF_REQ
    ,KE_LED_ON_REQ
-   ,KE_REPLY_NOW_REQ
-} ke_TestRequests;
+   ,KE_LED_BLINK_REQ
+} ke_LEDStatusRequests;
+
+
+
+
+/* ---------------- Local const variables declaration ------------------ */
+
+/* Array association between LED index and output LED channels */
+LOCAL const uint8 ui8LEDIndexToOutLEDCh[KE_LED_NAX_NUM] =
+{
+    LED_1_OUT_CHANNEL,      /* KE_LED_1 */
+    LED_2_OUT_CHANNEL       /* KE_LED_2 */
+};
+
+/* Array association between LED index and UDP sockets */
+LOCAL const uint8 ui8LEDIndexToUDPSocket[KE_LED_NAX_NUM] =
+{
+    LED_1_UDP_SOCKET_NUM,   /* KE_LED_1 */
+    LED_2_UDP_SOCKET_NUM    /* KE_LED_2 */
+};
+
+/* Matrix association between LED index and source/destination UDP ports */
+LOCAL const uint16 ui16LEDIndexToUDPPorts[KE_LED_NAX_NUM][UC_2] =
+{
+    {LED_1_UDP_SRC_PORT, LED_1_UDP_DST_PORT},   /* KE_LED_1 */
+    {LED_2_UDP_SRC_PORT, LED_2_UDP_DST_PORT}    /* KE_LED_2 */
+};
+
+/* LED requests data strings */
+LOCAL const uint8 kpui8LEDONcmdString[] = "led on";
+LOCAL const uint8 kpui8LEDOFFcmdString[] = "led off";
+LOCAL const uint8 kpui8LEDBlinkcmdString[] = "led blink";
 
 
 
 
 /* ---------------- Local variables declaration ------------------ */
 
+/* Current connection status */
 LOCAL ke_ConnectionStatus enConnStatus = KE_IDLE_STATE;
 
+/* UDP received data pointer */
 LOCAL uint8 *pui8UDPRXDataPtr = NULL_PTR;
 
+/* UDP received data length */
 LOCAL uint16 ui16UDPRXDataLength = US_NULL;
 
+/* Obtained IPv4 address */
 LOCAL uint32 ui32IPAddress = UL_NULL;
 
 
@@ -88,9 +156,8 @@ LOCAL uint32 ui32IPAddress = UL_NULL;
 
 /* -------------- Local functions prototypes --------------------- */
 
-LOCAL uint8 checkTestUDPData    (uint8 *, uint16);
-LOCAL void  manageTestData      (uint8, uint8 *, uint16);
-LOCAL void  pingReqCallback     (void);
+LOCAL ke_LEDStatusRequests  checkUDPData        (uint8 *, uint16);
+LOCAL void                  manageReceivedData  (ke_AppLEDIndexes, uint8 *, uint16);
 
 
 
@@ -123,46 +190,33 @@ EXPORTED void APP_UDP_Init( void )
 }
 
 
-// TEST!!!
-uint8 ui8REPLYAString[] = "rispondo A: ti puzza il culo!";
-uint8 ui8REPLYBString[] = "ciao rispondo! adesso proviamo la frammentazione quindi devo scrivere parecchio in questa stringa";
-uint8 ui8REPLYXString[] = "rispondo X: cazzo mandi";
-uint8 ui8RUNString[] = "ciao sono vivo! adesso proviamo la frammentazione quindi devo scrivere parecchio in questa stringa";
-uint8 *pui8StringToSendPtr;
+
 
 EXPORTED void APP_UDP_PeriodicTask( void )
 {
-    /* manage periodic tasks */
-    ARP_PeriodicTask();
-    IPV4_PeriodicTask();
-    ICMP_PeriodicTask();
-    DHCP_PeriodicTask();
-
     /* manage connection */
     switch(enConnStatus)
     {
         case KE_INIT_STATE:
         {
-            /* TEST!!! */
-            PORT_SetPortPinDirection(PORT_ID_D, PORT_PIN_0, PORT_DIR_OUT);
-            PORT_SetPortPinDirection(PORT_ID_D, PORT_PIN_1, PORT_DIR_OUT);
-            PORT_SetPortPinDirection(PORT_ID_D, PORT_PIN_2, PORT_DIR_OUT);
-
             /* get obtained IP address via DHCP */
             ui32IPAddress = IPV4_getObtainedIPAdd();
             if(ui32IPAddress != UL_NULL)
             {
-//                RTOS_SetCallback (RTOS_CB_ID_1, RTOS_CB_TYPE_SINGLE, 5000, &pingReqCallback);
-//                TCPIP_StartPingReq(ui32IPAddress, 0x0A2A0001);
-//                TCPIP_StartPingReq(ui32IPAddress, 0x3E958C17);0x40E9A000 0x3E958CA0
-
-                /* TEST: open a UDP socket */
-//                UDP_OpenUDPSocket(UDP_SOCKET_5, ui32IPAddress, 0x3E958C17, 2020, 1010);
-                UDP_OpenUDPSocket(UDP_SOCKET_5, ui32IPAddress, 0x0A2A0001, 2020, 1010);
-                UDP_OpenUDPSocket(UDP_SOCKET_2, ui32IPAddress, 0x0A2A0001, 3030, 4040);
-
-//                enConnStatus = KE_RUN_STATE;
-                enConnStatus = KE_IDLE_STATE;
+                /* open UDP socket for LED 1 */
+                UDP_OpenUDPSocket(ui8LEDIndexToUDPSocket[KE_LED_1],     /* UDP socket number */
+                                  ui32IPAddress,                        /* local IP address */
+                                  UL_UDP_SOCKET_REMOTE_IP_ADD,          /* remote IP address */
+                                  ui16LEDIndexToUDPPorts[KE_LED_1][0],  /* source port */
+                                  ui16LEDIndexToUDPPorts[KE_LED_1][1]); /* destination port */
+                /* open UDP socket for LED 2 */
+                UDP_OpenUDPSocket(ui8LEDIndexToUDPSocket[KE_LED_2],     /* UDP socket number */
+                                  ui32IPAddress,                        /* local IP address */
+                                  UL_UDP_SOCKET_REMOTE_IP_ADD,          /* remote IP address */
+                                  ui16LEDIndexToUDPPorts[KE_LED_2][0],  /* source port */
+                                  ui16LEDIndexToUDPPorts[KE_LED_2][1]); /* destination port */
+                /* go into RUN state */
+                enConnStatus = KE_RUN_STATE;
             }
             else
             {
@@ -173,36 +227,24 @@ EXPORTED void APP_UDP_PeriodicTask( void )
         }
         case KE_RUN_STATE:
         {
-            /* PING TEST */
-//            RTOS_SetCallback (RTOS_CB_ID_1, RTOS_CB_TYPE_SINGLE, 5000, &pingReqCallback);
-//            TCPIP_StartPingReq(ui32IPAddress, 0x0A2A0001);
-//            TCPIP_StartPingReq(ui32IPAddress, 0x3E958C17);
+            /* ATTENTION: send an eventual message to the remote IP address if needed */
 
-//            UDP_SendDataBuffer(UDP_SOCKET_5, ui8RUNString, MEM_GET_LENGTH(ui8RUNString));
-
-            /* go to WAIT state */
-            enConnStatus = KE_WAIT_STATE;
-
-            break;
-        }
-        case KE_REPLY_STATE:
-        {
-            /* send UDP reply */
-            UDP_SendDataBuffer(UDP_SOCKET_5, pui8StringToSendPtr, MEM_GET_LENGTH(pui8StringToSendPtr));
-
-            /* go to WAIT state */
+            /* go into WAIT state */
             enConnStatus = KE_WAIT_STATE;
 
             break;
         }
         case KE_WAIT_STATE:
         {
-            /* do test */
-            UDP_checkReceivedData(UDP_SOCKET_5, &pui8UDPRXDataPtr, &ui16UDPRXDataLength);
-            manageTestData(0, pui8UDPRXDataPtr, ui16UDPRXDataLength);
+            /* check if UDP data have been received for LED 1 socket */
+            UDP_checkReceivedData(ui8LEDIndexToUDPSocket[KE_LED_1], &pui8UDPRXDataPtr, &ui16UDPRXDataLength);
+            /* manage eventual received data */
+            manageReceivedData(KE_LED_1, pui8UDPRXDataPtr, ui16UDPRXDataLength);
 
-            UDP_checkReceivedData(UDP_SOCKET_2, &pui8UDPRXDataPtr, &ui16UDPRXDataLength);
-            manageTestData(1, pui8UDPRXDataPtr, ui16UDPRXDataLength);
+            /* check if UDP data have been received for LED 1 socket */
+            UDP_checkReceivedData(ui8LEDIndexToUDPSocket[KE_LED_2], &pui8UDPRXDataPtr, &ui16UDPRXDataLength);
+            /* manage eventual received data */
+            manageReceivedData(KE_LED_2, pui8UDPRXDataPtr, ui16UDPRXDataLength);
 
             /* remain in this state */
 
@@ -221,94 +263,96 @@ EXPORTED void APP_UDP_PeriodicTask( void )
 
 /* -------------- Local functions declaration ------------------ */
 
-// TEST!!!
-const uint8 REPLYcmdString[] = "feply";
-const uint8 LEDONcmdString[] = "led on";
-const uint8 LEDOFFcmdString[] = "led off";
-
-LOCAL uint8 checkTestUDPData( uint8 *pui8PtrToData, uint16 ui16UDPRXDataLength)
+/* get LED status request from received data */
+LOCAL ke_LEDStatusRequests checkUDPData( uint8 *pui8PtrToData, uint16 ui16UDPRXDataLength)
 {
-    uint8 ui8RetCode;
+    ke_LEDStatusRequests eReturnRequest;
 
     /* ATTENTION: TEST: check data */
-    if(!MEM_COMPARE(pui8PtrToData, LEDONcmdString, ui16UDPRXDataLength))
+    if(!MEM_COMPARE(pui8PtrToData, kpui8LEDONcmdString, ui16UDPRXDataLength))
     {
-        ui8RetCode = (uint8)KE_LED_ON_REQ;
+        eReturnRequest = KE_LED_ON_REQ;
     }
-    else if(!MEM_COMPARE(pui8PtrToData, LEDOFFcmdString, ui16UDPRXDataLength))
+    else if(!MEM_COMPARE(pui8PtrToData, kpui8LEDOFFcmdString, ui16UDPRXDataLength))
     {
-        ui8RetCode = (uint8)KE_LED_OFF_REQ;
+        eReturnRequest = KE_LED_OFF_REQ;
     }
-    else if(!MEM_COMPARE(pui8PtrToData, REPLYcmdString, 5))
+    else if(!MEM_COMPARE(pui8PtrToData, kpui8LEDBlinkcmdString, ui16UDPRXDataLength))
     {
-        if(*(pui8PtrToData + 6) == 'A')
-        {
-            pui8StringToSendPtr = ui8REPLYAString;
-        }
-        else if(*(pui8PtrToData + 6) == 'B')
-        {
-            pui8StringToSendPtr = ui8REPLYBString;
-        }
-        else
-        {
-            pui8StringToSendPtr = ui8REPLYXString;
-        }
-
-        ui8RetCode = (uint8)KE_REPLY_NOW_REQ;
+        eReturnRequest = KE_LED_BLINK_REQ;
     }
     else
     {
-        ui8RetCode = (uint8)KE_INVALID_REQ;
+        eReturnRequest = KE_INVALID_REQ;
     }
 
-    return ui8RetCode;
+    return eReturnRequest;
 }
 
 
-LOCAL void manageTestData(uint8 ui8LEDNum, uint8 *pui8UDPRXDataPtr, uint16 ui16UDPRXDataLength )
+/* perform LED status change if a valid request has been received */
+LOCAL void manageReceivedData( ke_AppLEDIndexes eLedIndex, uint8 *pui8UDPRXDataPtr, uint16 ui16UDPRXDataLength )
 {
+    uint8 aui8StringToSend[30]; /* ATTENTION: this array should contain the longest string */
+    ke_LEDStatusRequests eLedStatusRequest;
+
+    /* ATTENTION: It is supposed that eLedIndex is in the valid range */
+
     /* if data are valid */
     if((pui8UDPRXDataPtr != NULL_PTR)
     && (ui16UDPRXDataLength > US_NULL))
     {
-        /* manage data */
-        switch((ke_TestRequests)checkTestUDPData(pui8UDPRXDataPtr, ui16UDPRXDataLength))
+        /* get LED status request from received data */
+        eLedStatusRequest = checkUDPData(pui8UDPRXDataPtr, ui16UDPRXDataLength);
+
+        /* manage request */
+        switch((eLedStatusRequest))
         {
             case KE_LED_ON_REQ:
             {
-                PORT_SetPortPin(PORT_ID_D, (PORT_ke_PinNumber)ui8LEDNum);
+                /* turn required LED ON */
+                OUTCH_SetChannelStatus(ui8LEDIndexToOutLEDCh[eLedIndex], OUTCH_KE_CH_TURN_ON);
+                
+                /* prepare ACK data string */
+                sprintf(aui8StringToSend, "LED %d state is ON", (uint8)(eLedIndex + UC_1));
 
                 break;
             }
             case KE_LED_OFF_REQ:
             {
-                PORT_ClearPortPin(PORT_ID_D, (PORT_ke_PinNumber)ui8LEDNum);
+                /* turn required LED OFF */
+                OUTCH_SetChannelStatus(ui8LEDIndexToOutLEDCh[eLedIndex], OUTCH_KE_CH_TURN_OFF);
+
+                /* prepare ACK data string */
+                sprintf(aui8StringToSend, "LED %d state is OFF", (uint8)(eLedIndex + UC_1));
 
                 break;
             }
-            case KE_REPLY_NOW_REQ:
+            case KE_LED_BLINK_REQ:
             {
-                /* go to REPLY state */
-                enConnStatus = KE_REPLY_STATE;
+                /* blink required LED */
+                OUTCH_SetChannelStatus(ui8LEDIndexToOutLEDCh[eLedIndex], OUTCH_KE_CH_BLINKING);
+
+                /* prepare ACK data string */
+                sprintf(aui8StringToSend, "LED %d state is blinking", (uint8)(eLedIndex + UC_1));
 
                 break;
             }
+            case KE_INVALID_REQ:
             default:
             {
-                /* discard request */
+                /* send a negative ACK string */
+                sprintf(aui8StringToSend, "Invalid LED state request");
             }
         }
+
+        /* send UDP ACK packet */
+        UDP_SendDataBuffer(ui8LEDIndexToUDPSocket[eLedIndex], aui8StringToSend, MEM_GET_LENGTH(aui8StringToSend));
     }
     else
     {
         /* do nothing */
     }
-}
-
-
-LOCAL void pingReqCallback( void )
-{
-    //TCPIP_StopPingReq(ui32IPAddress, 0x3E958C17);
 }
 
 

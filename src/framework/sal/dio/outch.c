@@ -28,6 +28,7 @@
  *
  * Evolution of the file:
  * 06/08/2015 - File created - Marco Russi
+ * 16/08/2015 - LED is turned OFF immediately - Marco Russi
  *
 */
 
@@ -260,22 +261,15 @@ EXPORTED void OUTCH_SetChannelStatus(OUTCH_ke_Channels eRequiredCh, OUTCH_ke_ChS
          /* turn OFF and default */
          case OUTCH_KE_CH_TURN_OFF:
          {
+            /* LED is turned off immediately */
             /* set to OFF */
             SET_TURN_OFF_REQ((uint8)eRequiredCh);
 
-            /* LED is turned off immediately if it is not blinking only.
-               If LED is blinking the turn off status shall be updated
-               with other blinking LEDs */
-            if(CHECK_BLINKING_REQ((uint8)eRequiredCh))
-            {
-               /* clear blinking request */
-               CLEAR_BLINKING_REQ((uint8)eRequiredCh);
-            }
-            else
-            {
-                /* reset channel immediately */
-                resetChannelOutput(eRequiredCh);
-            }
+            /* clear blinking request */
+            CLEAR_BLINKING_REQ((uint8)eRequiredCh);
+
+            /* reset channel immediately */
+            resetChannelOutput(eRequiredCh);
 
             break;
          }

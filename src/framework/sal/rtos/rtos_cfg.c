@@ -28,6 +28,7 @@
  *
  * Evolution of the file:
  * 06/08/2015 - File created - Marco Russi
+ * 16/08/2015 - Added connectivity related tasks - Marco Russi
  *
 */
 
@@ -46,7 +47,12 @@
 #include "../dio/inch.h"                /* component INCH header file */
 #include "../dio/outch.h"               /* component OUTCH header file */
 
-#include "../../../app_udp.h"
+#include "../udp/arp.h"                 /* component ARP header file */
+#include "../udp/ipv4.h"                /* component IPv4 header file */
+#include "../udp/icmp.h"                /* component ICMP header file */
+#include "../udp/dhcp.h"                /* component DHCP header file */
+
+#include "../../../app_udp.h"           /* component UDP application header file */
 
 
 
@@ -58,6 +64,7 @@ static task_ptr_t const initState_ap[] =
 {
     &OUTCH_Init,
     &INCH_Init,
+    /* ATTENTION: ETHMAC_Init, IPV4_Init and DHCP_Init functions are called by APP_UDP_Init */
     &APP_UDP_Init,
     NULL_PTR
 };
@@ -68,6 +75,10 @@ static task_ptr_t const normalState_ap[] =
 {
     &OUTCH_PeriodicTask,
     &INCH_PeriodicTask,
+    &ARP_PeriodicTask,
+    &IPV4_PeriodicTask,
+    &ICMP_PeriodicTask,
+    &DHCP_PeriodicTask,
     &APP_UDP_PeriodicTask,
     NULL_PTR
 };
