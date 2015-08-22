@@ -211,7 +211,7 @@ EXPORTED void ARP_setLocalIPAddress( uint32 ui32IPAdd )
 /* find IP address in our local IP addresses */
 EXPORTED boolean ARP_checkLocalIPAdd( uint32 ui32IPAdd )
 {
-    uint8 ui8Index;
+    uint8 ui8Index = UC_NULL;
     boolean bIPAddFound;
 
     /* search in local IP addresses array */
