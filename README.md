@@ -5,7 +5,7 @@ This UDP stack has been added to the existing PIC32 framework.
 This demo project runs over PIC32 Ethernet Starter Kit.
 The UDP application implemented in app_udp.c file controls state of 2 LEDs with
 2 related UDP sockets. For an easy test just run from ubuntu console following
-commands considering x.x.x.x as the obtained IP address:
+commands considering x.x.x.x as the obtained IP address of the board:
 
     $ sudo sendip -p ipv4 -is 10.42.0.1 -p udp -us 1010 -ud 2020 -v x.x.x.x -d "led on"
 
