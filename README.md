@@ -2,7 +2,7 @@
 A minimal UDP/IP stack implemented on top of an Ethernet layer for PIC32MX.
 This UDP stack has been added to the existing PIC32 framework.
 
-This demo project runs over PIC32 Ethernet Starter Kit connected to my Ubuntu laptop through an Ethernet switch.
+This demo project runs over PIC32 Ethernet Starter Kit and has been tested with an Ubuntu laptop through an Ethernet switch.
 The UDP application implemented in app_udp.c file controls state of 2 LEDs with
 2 related UDP sockets. For an easy test just run from ubuntu console following
 commands considering x.x.x.x as the obtained IP address of the board:
