@@ -503,7 +503,7 @@ LOCAL void decodeIPv4Packet(uint8 *pui8FramePtr)
     READ_32BIT_AND_NEXT(pui32HeaderPtr, ui32HdrWord);
     ui32DstIPAdd = GET_HDR_DST_ADD(ui32HdrWord);
 
-    /* if checkcum is valid */
+    /* if checksum is valid */
     if(US_NULL == calcHeaderChecksum((uint8 *)pui8FramePtr, (ui32HdrLength * UC_4)))
     {
         /* if there is a pending fragmented packet */
