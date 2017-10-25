@@ -31,3 +31,4 @@ Known issues:
  - Ethernet layer remains stacked until an Ethernet cable is connected.
    It is necessary to add a timeout in order to exit the related infinite loop
    in eth.c file.
+ - Checksum calculation with fragmented packets has not been tested properly.

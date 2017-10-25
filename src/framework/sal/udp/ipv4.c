@@ -540,6 +540,9 @@ LOCAL void decodeIPv4Packet(uint8 *pui8FramePtr)
 
                     /* packet re-assembled: manage data */
                     bSendDataUp = B_TRUE;
+					
+					/* reset flag */
+					stRXPendingFrag.bFragPending = B_FALSE;
                 }
                 else
                 {
